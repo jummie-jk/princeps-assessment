@@ -1,7 +1,8 @@
 .topbar {
-  background-color: #f4f4f4;
+  background-color: #fff;
   padding: 10px 20px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 0.8px solid #EFEFEF
 }
 
 .topbar-content {
@@ -15,8 +16,8 @@
   max-width: 400px;
   padding: 8px 12px;
   font-size: 14px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
+  border-radius: 10px;
+  border: 1px solid #ECF0F3;
   outline: none;
 }
 
@@ -29,7 +30,8 @@
 .icon-circle {
   width: 36px;
   height: 36px;
-  background-color: #e0e0e0;
+  background-color: #F7F7F9;
+  border: 1px solid #EBEBEB;
   border-radius: 50%;
   display: flex;
   justify-content: center;
