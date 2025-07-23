@@ -1,0 +1,107 @@
+<div class="dashboard-container">
+  <app-side-bar></app-side-bar>
+  <div class="main-section">
+    <app-top-bar></app-top-bar>
+    <main class="content">
+      <div class="flex-between">
+        <div>
+          <p class="customer-text">Customers</p>
+          <p class="create-text">Create, edit and manage your customers.</p>
+        </div>
+        <!-- Create customer button -->
+        <div>
+          <button class="create-button"  (click)="openModal = true">
+            <span class="material-symbols-outlined">add</span>
+            Add new Customer
+          </button>
+        </div>
+      </div>
+      <!-- Dashboard Cards -->
+      <div class="dashboard-grid">
+        <div class="card card-left">
+          <h3>All customers</h3>
+          <p>1300</p>
+        </div>
+
+        <div class="card card-middle">
+          <div class="middle-section left-half">
+            <h4>Active customers</h4>
+            <p>1300</p>
+          </div>
+          <div class="middle-section right-half">
+            <h4>Overdue customers</h4>
+            <p>1300</p>
+          </div>
+        </div>
+
+        <div class="card card-right">
+          <h3>Inactive & Dormant</h3>
+          <p>1300</p>
+        </div>
+      </div>
+
+      <!-- Table contols -->
+      <div class="table-header">
+        <input
+          type="text"
+          placeholder="Search customers..."
+          (input)="onSearch($any($event.target).value)"
+          class="search-input"
+        />
+
+        <div class="table-actions">
+          <button class="action-btn">Filter</button>
+          <button class="action-btn">Edit Column</button>
+          <button class="action-btn">Export</button>
+        </div>
+      </div>
+
+    <!-- Main table -->
+      <table class="simple-table">
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Status</th>
+            <th>Joined At</th>
+            <th>⋮</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ customer.first_name + " " + customer.last_name }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.telephone }}</td>
+            <td>{{ customer.status }}</td>
+            <td>{{ customer.created_at | date : "mediumDate" }}</td>
+            <td>⋮</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pagination controls -->
+      <div class="pagination-controls">
+        <button (click)="onPageChange(page - 1)" [disabled]="page === 1">
+          Prev
+        </button>
+        <span>Page {{ page }}</span>
+        <button
+          (click)="onPageChange(page + 1)"
+          [disabled]="page * pageSize >= total"
+        >
+          Next
+        </button>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Modal to create customer -->
+<app-create-customer-modal
+  *ngIf="openModal"
+  (close)="openModal = false"
+  (created)="refreshCustomerList()"
+/>

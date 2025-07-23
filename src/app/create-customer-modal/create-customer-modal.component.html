@@ -1,0 +1,94 @@
+<div class="modal">
+  <div class="modal-content">
+    <h2>Create New Customer</h2>
+
+    <form [formGroup]="customerForm" (ngSubmit)="submit()">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="firstname">First Name</label>
+          <input id="firstname" formControlName="firstname" />
+        </div>
+
+        <div class="form-field">
+          <label for="lastname">Last Name</label>
+          <input id="lastname" formControlName="lastname" />
+        </div>
+
+        <div class="form-field">
+          <label for="telephone">Telephone</label>
+          <input id="telephone" formControlName="telephone" />
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" formControlName="email" />
+        </div>
+
+        <div class="form-field">
+          <label for="bvn">BVN</label>
+          <input id="bvn" formControlName="bvn" />
+        </div>
+
+        <div class="form-field">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" formControlName="dob" />
+        </div>
+
+        <div class="form-field">
+          <label for="residential_address">Address</label>
+          <input
+            id="residential_address"
+            formControlName="residential_address"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="state">State</label>
+          <input id="state" formControlName="state" />
+        </div>
+
+        <div class="form-field">
+          <label for="bankcode">Bank Code</label>
+          <input id="bankcode" formControlName="bankcode" />
+        </div>
+
+        <div class="form-field">
+          <label for="accountnumber">Account Number</label>
+          <input id="accountnumber" formControlName="accountnumber" />
+        </div>
+
+        <div class="form-field">
+          <label for="city">City</label>
+          <input id="city" formControlName="city" />
+        </div>
+
+        <div class="form-field">
+          <label for="country">Country</label>
+          <input id="country" formControlName="country" />
+        </div>
+
+        <div class="form-field">
+          <label for="id_card">ID Card</label>
+          <input id="id_card" formControlName="id_card" />
+        </div>
+
+        <div class="form-field">
+          <label for="voters_card">Voter's Card</label>
+          <input id="voters_card" formControlName="voters_card" />
+        </div>
+
+        <div class="form-field">
+          <label for="drivers_licence">Driver’s Licence</label>
+          <input id="drivers_licence" formControlName="drivers_licence" />
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Submit</button>
+        <button type="button" class="btn-secondary" (click)="close.emit()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

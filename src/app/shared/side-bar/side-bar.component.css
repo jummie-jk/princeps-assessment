@@ -1,0 +1,48 @@
+.sidebar {
+  width: 220px;
+  border-right: 1px solid #ededef;
+  background: #0053a60a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  height: 100vh;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.nav-links a {
+  color: #ccc;
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+  transition: color 0.3s;
+  font-family: Switzer;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: -3%;
+  color: #747682;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.company-text {
+  font-family: Switzer;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+
+  line-height: 100%;
+  letter-spacing: -5%;
+  color: #47484d;
+  border-bottom: 1px solid #ededef;
+  margin-bottom: 1rem;
+}

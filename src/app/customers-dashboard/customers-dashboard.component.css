@@ -1,0 +1,153 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.main-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 20px;
+  background-color: #fff;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.customer-text {
+  font-weight: 600;
+  font-style: Semibold;
+  font-size: 20px;
+
+  line-height: 100%;
+  letter-spacing: -3%;
+  color: #0053a6;
+}
+
+.create-text {
+  font-family: Euclid Circular B;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: -3%;
+  color: #44444b;
+}
+
+.flex-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* General card styling */
+/* .card {
+    background-color: #fff;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  } */
+.card {
+  background-color: #fff;
+  padding: 16px;
+  border: 1px solid #efefef;
+  border-bottom: 2px solid #e0e0e0; /* First bottom border */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: relative; /* Needed for pseudo-element */
+}
+
+/* Second (fake) bottom border */
+.card::after {
+  content: "";
+  position: absolute;
+  border-radius: 8px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Height of second border */
+  background-color: #ffffff; /* Slightly different gray to create double look */
+  transform: translateY(4px); /* Push it slightly below the first border */
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Middle card split into two halves */
+.card-middle {
+  display: flex;
+}
+
+/* Each half of the middle card */
+.middle-section {
+  flex: 1;
+  padding: 10px;
+}
+
+.left-half {
+  border-right: 1px solid #ccc;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px;
+  font-size: 14px;
+}
+
+.table-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.simple-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.simple-table th,
+.simple-table td {
+  border: 1px solid #e0e0e0;
+  padding: 12px 8px;
+  text-align: left;
+}
+
+.simple-table th {
+  font-weight: 600;
+}
+
+.pagination-controls {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
