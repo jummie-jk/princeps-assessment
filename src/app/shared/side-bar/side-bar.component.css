@@ -1,5 +1,5 @@
 .sidebar {
-  width: 220px;
+  width: 200px;
   border-right: 1px solid #ededef;
   background: #0053a60a;
   color: #fff;
@@ -10,39 +10,56 @@
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 40px;
+  padding-bottom: 20px;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: -5%;
+  color: #47484d;
+  border-bottom: 1px solid #ededef;
 }
 
 .nav-links a {
-  color: #ccc;
-  text-decoration: none;
-  padding: 10px 0;
-  display: block;
-  transition: color 0.3s;
-  font-family: Switzer;
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 14px;
-  line-height: 140%;
-  letter-spacing: -3%;
-  color: #747682;
-}
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    color: #747682;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+    font-family: 'Switzer', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.3px;
+  }
+  
 
 .nav-links a:hover {
   color: #fff;
 }
 
 .company-text {
-  font-family: Switzer;
   font-weight: 500;
   font-style: Medium;
   font-size: 14px;
-
   line-height: 100%;
   letter-spacing: -5%;
   color: #47484d;
   border-bottom: 1px solid #ededef;
-  margin-bottom: 1rem;
 }
+
+.nav-links a:hover {
+    background-color: #e6f2ff; 
+    color: #121212;
+  }
+  
+  .nav-links a:hover .material-symbols-outlined {
+    color: #0053a6;
+  }
+
+  .icon{
+    margin-top: 0px;
+  }
