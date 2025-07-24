@@ -5,71 +5,114 @@
     <form [formGroup]="customerForm" (ngSubmit)="submit()">
       <div class="form-grid">
         <div class="form-field">
-          <label for="firstname">First Name</label>
+          <label for="firstname" class="required">First Name</label>
           <input id="firstname" formControlName="firstname" />
+          <div class="error" *ngIf="customerForm.get('firstname')?.touched && customerForm.get('firstname')?.invalid">
+            <small *ngIf="customerForm.get('firstname')?.errors?.['required']">First Name is required.</small>
+          </div>
         </div>
 
         <div class="form-field">
-          <label for="lastname">Last Name</label>
+          <label for="lastname" class="required">Last Name</label>
           <input id="lastname" formControlName="lastname" />
+          <div class="error" *ngIf="customerForm.get('lastname')?.touched && customerForm.get('lastname')?.invalid">
+            <small *ngIf="customerForm.get('lastname')?.errors?.['required']">Last Name is required.</small>
+          </div>
         </div>
 
         <div class="form-field">
-          <label for="telephone">Telephone</label>
+          <label for="telephone" class="required">Telephone</label>
           <input id="telephone" formControlName="telephone" />
+          <div class="error" *ngIf="customerForm.get('telephone')?.touched && customerForm.get('telephone')?.invalid">
+            <small *ngIf="customerForm.get('telephone')?.errors?.['required']">Telephone is required.</small>
+          </div>
         </div>
 
         <div class="form-field">
-          <label for="email">Email</label>
+          <label for="email" class="required">Email</label>
           <input id="email" formControlName="email" />
+          <div class="error" *ngIf="customerForm.get('email')?.touched && customerForm.get('email')?.invalid">
+            <small *ngIf="customerForm.get('email')?.errors?.['required']">Email is required.</small>
+          </div>
         </div>
 
         <div class="form-field">
-          <label for="bvn">BVN</label>
+          <label for="bvn" class="required">BVN</label>
           <input id="bvn" formControlName="bvn" />
+          <div class="error" *ngIf="customerForm.get('bvn')?.touched && customerForm.get('bvn')?.invalid">
+            <small *ngIf="customerForm.get('bvn')?.errors?.['required']">BVN is required.</small>
+            <small *ngIf="customerForm.get('bvn')?.errors?.['minlength'] || customerForm.get('bvn')?.errors?.['maxlength']">
+              BVN must be exactly 11 digits.
+            </small>
+          </div>
         </div>
 
         <div class="form-field">
-          <label for="dob">Date of Birth</label>
+          <label for="dob" class="required">Date of Birth</label>
           <input type="date" id="dob" formControlName="dob" />
+          <div class="error" *ngIf="customerForm.get('dob')?.touched && customerForm.get('dob')?.invalid">
+            <small *ngIf="customerForm.get('dob')?.errors?.['required']">Date of Birth is required.</small>
+          </div>
         </div>
 
         <div class="form-field">
-          <label for="residential_address">Address</label>
+          <label for="residential_address" class="required">Address</label>
           <input
             id="residential_address"
             formControlName="residential_address"
           />
+          <div class="error" *ngIf="customerForm.get('residential_address')?.touched && customerForm.get('residential_address')?.invalid">
+            <small *ngIf="customerForm.get('residential_address')?.errors?.['required']">Address is required.</small>
+          </div>
         </div>
 
         <div class="form-field">
-          <label for="state">State</label>
+          <label for="state" class="required">State</label>
           <input id="state" formControlName="state" />
+          <div class="error" *ngIf="customerForm.get('state')?.touched && customerForm.get('state')?.invalid">
+            <small *ngIf="customerForm.get('state')?.errors?.['required']">State is required.</small>
+          </div>
         </div>
 
         <div class="form-field">
-          <label for="bankcode">Bank Code</label>
+          <label for="bankcode" class="required">Bank Code</label>
           <input id="bankcode" formControlName="bankcode" />
+          <div class="error" *ngIf="customerForm.get('bankcode')?.touched && customerForm.get('bankcode')?.invalid">
+            <small *ngIf="customerForm.get('bankcode')?.errors?.['required']">Bank Code is required.</small>
+          </div>
         </div>
 
         <div class="form-field">
-          <label for="accountnumber">Account Number</label>
+          <label for="accountnumber" class="required">Account Number</label>
           <input id="accountnumber" formControlName="accountnumber" />
+          <div class="error" *ngIf="customerForm.get('accountnumber')?.touched && customerForm.get('accountnumber')?.invalid">
+            <small *ngIf="customerForm.get('accountnumber')?.errors?.['required']">Account Number is required.</small>
+          </div>
         </div>
 
         <div class="form-field">
-          <label for="city">City</label>
+          <label for="city" class="required">City</label>
           <input id="city" formControlName="city" />
+          <div class="error" *ngIf="customerForm.get('city')?.touched && customerForm.get('city')?.invalid">
+            <small *ngIf="customerForm.get('city')?.errors?.['required']">City is required.</small>
+          </div>
         </div>
 
         <div class="form-field">
-          <label for="country">Country</label>
+          <label for="country"class="required" >Country</label>
           <input id="country" formControlName="country" />
+          <div class="error" *ngIf="customerForm.get('country')?.touched && customerForm.get('country')?.invalid">
+            <small *ngIf="customerForm.get('country')?.errors?.['required']">Country is required.</small>
+          </div>
         </div>
 
         <div class="form-field">
-          <label for="id_card">ID Card</label>
+          <label for="id_card" class="required">ID Card</label>
           <input id="id_card" formControlName="id_card" />
+          <div class="error" *ngIf="customerForm.get('id_card')?.touched && customerForm.get('id_card')?.invalid">
+            <small *ngIf="customerForm.get('id_card')?.errors?.['required']">ID Card link is required.</small>
+            <small *ngIf="customerForm.get('id_card')?.errors?.['invalidUrl']">Please enter a valid URL.</small>
+          </div>
         </div>
 
         <div class="form-field">

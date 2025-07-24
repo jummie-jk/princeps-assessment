@@ -81,3 +81,13 @@ button {
   background-color: #e5e7eb;
   color: #333;
 }
+
+.required::after {
+    content: ' *';
+    color: red;
+  }
+
+  .error small {
+    color: red;
+    font-size: 12px;
+  }

@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
+  AbstractControl,
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
+  ValidationErrors,
   Validators,
 } from '@angular/forms';
 import { CustomerServiceService } from '../services/customer-service.service';
@@ -30,7 +32,7 @@ export class CreateCustomerModalComponent {
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       telephone: ['', Validators.required],
-      bvn: ['', Validators.required],
+      bvn: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
       dob: ['', Validators.required],
       residential_address: ['', Validators.required],
       state: ['', Validators.required],
@@ -39,7 +41,7 @@ export class CreateCustomerModalComponent {
       email: ['', [Validators.required, Validators.email]],
       city: ['', Validators.required],
       country: ['', Validators.required],
-      id_card: ['https://id-card.com'],
+      id_card: ['', [Validators.required, this.urlValidator]],
       voters_card: [''],
       drivers_licence: [''],
       state_id: [36],
@@ -60,5 +62,12 @@ export class CreateCustomerModalComponent {
       },
       error: (err) => console.error('Create customer failed', err),
     });
+  }
+
+  urlValidator(control: AbstractControl): ValidationErrors | null {
+    const value = control.value;
+    if (!value) return null;
+    const urlPattern = /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-._~:/?#[\]@!$&'()*+,;=]*)?$/i;
+    return urlPattern.test(value) ? null : { invalidUrl: true };
   }
 }
